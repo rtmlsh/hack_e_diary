@@ -15,7 +15,7 @@ def check_lessons(year_of_study, subject_title):
     subjects = Subject.objects.filter(year_of_study=year_of_study)
     titles = [subject.title for subject in subjects]
     if subject_title not in titles:
-        raise 'Неправильно введено название предмета'
+        raise Exception('Неправильно введено название предмета')
 
 
 def create_commendation(name, subject_title, year_of_study,
